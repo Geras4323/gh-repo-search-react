@@ -9,7 +9,7 @@ function useLocalStorage(locker, initialValue) {
       let parsedData;
 
       if (!fetchedData) {
-        localStorage.setItem(locker, initialValue);
+        localStorage.setItem(locker, JSON.stringify(initialValue));
         parsedData = initialValue;
       } else {
         parsedData = JSON.parse(fetchedData);
