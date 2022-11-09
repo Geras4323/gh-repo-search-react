@@ -1,18 +1,22 @@
-import React from 'react'
+import React from 'react';
 import './App.css'
 
 import { InputForm } from './containers/InputForm';
+import { SearchRepos } from './containers/Repos';
 
-import { SearchRepos } from './containers/SearchRepos';
 
 export default function App() {
   const [userData, setUserData] = React.useState({})
 
-
   return (
     <div className="App">
+      <p className="description">Enter a GitHub username to see its repositories</p>
+
       {userData.username &&
-        <h1>{`Username: ${userData.username} --- ${userData.role}`}</h1>
+        <header>
+          <h1>{`Username: ${userData.username}`}</h1>
+          <h2>{`Role: ${userData.role}`}</h2>
+        </header>
       }
 
       <InputForm
