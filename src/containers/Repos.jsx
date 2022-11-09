@@ -6,7 +6,7 @@ import { ReposTable } from '../components/ReposTable';
 
 
 function SearchRepos({username}) {
-  const { repos } = useSearchGithub(username)
+  const { repos, loading } = useSearchGithub(username)
   const [reposLocal, setReposLocal] = React.useState()  // for when reloading
   const criteria = React.useRef()
 
@@ -33,7 +33,10 @@ function SearchRepos({username}) {
         onChange={filterRepos}
       />
 
-      {repos.length > 0 &&
+      {loading &&
+        <p className="loading_msg">Retrieving data...</p>
+      }
+      {repos.length > 0 && !loading &&
         <ReposTable
           reposLocal={reposLocal}
         />
