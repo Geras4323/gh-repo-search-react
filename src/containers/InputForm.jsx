@@ -13,7 +13,6 @@ function InputForm({ setUserData }) {
     if (data) {
       setUserData({
         username: data.username,
-        role: data.role,
       })
     }
   }, [data])
@@ -23,7 +22,6 @@ function InputForm({ setUserData }) {
     if (username.current.value) {
       saveToLS({
         username: username.current.value,
-        role: role.current.value,
       })
     }
   }
@@ -36,12 +34,6 @@ function InputForm({ setUserData }) {
           ref={username}
           type="text"
           placeholder='Username'
-        />
-        <input
-          className="form_input"
-          ref={role}
-          type="text"
-          placeholder='Role'
         />
         <button>Enter data</button>
       </form>

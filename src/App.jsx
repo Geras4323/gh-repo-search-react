@@ -15,7 +15,6 @@ export default function App() {
       {userData.username &&
         <header>
           <h1>{`Username: ${userData.username}`}</h1>
-          <h2>{`Role: ${userData.role}`}</h2>
         </header>
       }
 
